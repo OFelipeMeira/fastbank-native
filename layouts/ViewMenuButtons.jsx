@@ -1,49 +1,69 @@
 import styled from "styled-components/native";
 
 export const ViewMenuButtons = () => {
-    
-    const MyContainter2 = styled.View`
-        height: 150px;
-        width: 350px;
-        justify-content: space-evenly;
-        /* border: 1px solid red; */
-        flex-direction: row;
-        align-items: center;
-    `;
+   const MyContainterView = styled.View`
+      /* border: 1px solid red; */
+      height: 150px;
+      width: 350px;
+      justify-content: space-evenly;
+      flex-direction: row;
+      align-items: center;
+   `;
 
-    const MyButton = styled.TouchableOpacity`
-        height: 100px;
-        width: 100px;
-        /* border: 1px solid blue; */
-        align-items: center;
-    `;
+   const MyButtonContainer = styled.View`
+      /* border: 1px solid red; */
+      align-items: center;
+      padding: 5px;
+      border: 3px solid #00f;
+      border-radius: 10px;
+   `;
 
-    const MyButtonIcon = styled.Image`
-        width: 100%;
-        height: 100%;
-    `;
-    const MyButtonText = styled.Text`
-        font-size: 15px;
-        font-weight: 500;
-        color: #00f;
-    `;
+   const MyButtonText = styled.Text`
+      font-size: 17px;
+      font-weight: 500;
+      color: #00f;
+   `;
 
-    return (
-        <MyContainter2>
+   const MyButton = styled.TouchableOpacity`
+      /* border: 1px solid blue; */
+      height: 100px;
+      width: 100px;
+      align-items: center;
+      justify-content: center;
+   `;
+
+   const MyButtonIcon = styled.Image`
+      width: 80%;
+      height: 100%;
+      object-fit: contain;
+   `;
+
+   return (
+      <MyContainterView>
+         <MyButtonContainer>
             <MyButton>
-                <MyButtonIcon source={require("../assets/icon.png")} />
-                <MyButtonText>Trasnfer</MyButtonText>
+               <MyButtonIcon
+                  source={require("../assets/Icons/iconTransfer.png")}
+               />
             </MyButton>
+            <MyButtonText>Trasnfer</MyButtonText>
+         </MyButtonContainer>
 
+         <MyButtonContainer>
             <MyButton>
-                <MyButtonIcon source={require("../assets/icon.png")} />
-                <MyButtonText>Loan</MyButtonText>
+               <MyButtonIcon source={require("../assets/Icons/iconLoan.png")} />
             </MyButton>
+            <MyButtonText>Loan</MyButtonText>
+         </MyButtonContainer>
 
+         <MyButtonContainer>
             <MyButton>
-                <MyButtonIcon source={require("../assets/icon.png")} />
-                <MyButtonText>Credit Card</MyButtonText>
+               <MyButtonIcon
+                  source={require("../assets/Icons/iconCreditCard.png")}
+               />
             </MyButton>
-        </MyContainter2>
-    );
+            <MyButtonText>Credit Card</MyButtonText>
+         </MyButtonContainer>
+      </MyContainterView>
+   );
 };

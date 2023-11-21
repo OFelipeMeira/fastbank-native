@@ -4,35 +4,54 @@ import styled from "styled-components/native";
 
 import { MyInput } from "../components/MyInput";
 import { MyButton } from "../components/MyButton";
+import { MyButtonOutlined } from "../components/MyButtonOutlined";
 
-export default function Register() {
-    const MyContainter = styled.View`
-        /* border: 1px solid red; */
-        height: 500px;
-        align-items: center;
-        justify-content: space-between;
-    `;
+export default function Register({ navigation }) {
+   const MyPageContainerView = styled.View`
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+   `;
 
-    return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: "#fff",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
-            <MyContainter>
-                <MyInput placeholder="Email" />
-                <MyInput placeholder="Password" secureTextEntry={true} />
-                <MyInput placeholder="First Name" />
-                <MyInput placeholder="Last Name" />
-                <MyInput placeholder="CPF" />
+   const MyContainter = styled.View`
+      /* border: 1px solid red; */
+      height: 500px;
+      align-items: center;
+      justify-content: space-between;
+   `;
 
-                <MyButton text={"Register"} />
-            </MyContainter>
+   return (
+      <MyPageContainerView
+         style={{
+            flex: 1,
+            backgroundColor: "#fff",
+            alignItems: "center",
+            justifyContent: "center",
+         }}
+      >
+         <MyContainter>
+            <MyInput placeholder="Email" />
+            <MyInput placeholder="Password" secureTextEntry={true} />
+            <MyInput placeholder="First Name" />
+            <MyInput placeholder="Last Name" />
+            <MyInput placeholder="CPF" />
 
-            <StatusBar style="auto" />
-        </View>
-    );
+            <MyButton
+               text={"Register"}
+               onPress={() => {
+                  navigation.navigate("Menu");
+               }}
+            />
+            <MyButtonOutlined
+               text={"Login"}
+               onPress={() => {
+                  navigation.navigate("Login");
+               }}
+            />
+         </MyContainter>
+
+         <StatusBar style="auto" />
+      </MyPageContainerView>
+   );
 }

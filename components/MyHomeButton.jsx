@@ -7,7 +7,7 @@ export function MyHomeButton() {
         width:50px;
 
         position:absolute;
-        top: 50px;
+        top: 60px;
         left: 30px;
     `
     const MyImage = styled.Image`
@@ -17,7 +17,7 @@ export function MyHomeButton() {
 
     return (
         <MyHomeButton>
-            <MyImage source={require("../assets/icon.png")} />
+            <MyImage source={require("../assets/Icons/iconHome.png")} />
         </MyHomeButton>
     );
 }

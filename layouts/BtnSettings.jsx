@@ -5,7 +5,7 @@ export function BtnSettings() {
         height: 50px;
         width: 50px;
         position: absolute;
-        top: 35px;
+        top: 50px;
         left: 20px;
     `;
     const MyButtonIcon = styled.Image`
@@ -15,7 +15,7 @@ export function BtnSettings() {
 
     return (
         <BtnSettings>
-            <MyButtonIcon source={require("../assets/icon.png")} />
+            <MyButtonIcon source={require("../assets/Icons/iconSettings.png")} />
         </BtnSettings>
     );
 }
