@@ -1,25 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
 import styled from "styled-components/native";
 
 import { MyInput } from "../components/MyInput";
-import { MyButton } from "../components/MyButton";
 import { MyButtonOutlined } from "../components/MyButtonOutlined";
+import { MyButtonText } from "../components/MyButtonText";
 
-export default function Register({ navigation }) {
+export default function EditAddress({ navigation }) {
    const MyPageContainerView = styled.View`
+      /* border: 1px solid green; */
       width: 100%;
       height: 100%;
       align-items: center;
-      justify-content: center;
-      background-color: #fff;
    `;
 
    const MyContainter = styled.View`
       /* border: 1px solid red; */
-      height: 500px;
+      height: 600px;
+
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-around;
    `;
 
    return (
@@ -32,27 +30,22 @@ export default function Register({ navigation }) {
          }}
       >
          <MyContainter>
-            <MyInput placeholder="Email" />
-            <MyInput placeholder="Password" secureTextEntry={true} />
-            <MyInput placeholder="First Name" />
-            <MyInput placeholder="Last Name" />
-            <MyInput placeholder="CPF" />
 
-            <MyButton
-               text={"Register"}
-               onPress={() => {
-                  navigation.navigate("Menu");
-               }}
-            />
+            <MyInput placeholder={"CEP"} style={{ marginBottom: 30 }} />
+            <MyInput placeholder={"Street"} style={{ marginBottom: 30 }} editable={false} disabled />
+            <MyInput placeholder={"State"} style={{ marginBottom: 30 }} editable={false} disabled />
+            <MyInput placeholder={"Complement"} style={{ marginBottom: 30 }} />
+            <MyInput placeholder={"Number"} style={{ marginBottom: 30 }}/>
+
             <MyButtonOutlined
-               text={"Login"}
+               text={"Save"}
                onPress={() => {
                   navigation.navigate("Login");
                }}
             />
+
          </MyContainter>
 
-         <StatusBar style="auto" />
       </MyPageContainerView>
    );
 }

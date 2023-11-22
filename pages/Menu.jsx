@@ -7,12 +7,13 @@ import { ViewBalance } from "../layouts/ViewMenuBalance";
 import { ViewMenuButtons } from "../layouts/ViewMenuButtons";
 import { ViewTransactionHistory } from "../layouts/ViewMenuTransactionHistory";
 
-export default function Menu() {
+export default function Menu({ navigation }) {
    const MyPageContainerView = styled.View`
       width: 100%;
       height: 100%;
       align-items: center;
       justify-content: center;
+      background-color: #fff;
    `;
 
    const lista = [
@@ -32,7 +33,7 @@ export default function Menu() {
 
    return (
       <MyPageContainerView>
-         <BtnSettings />
+         <BtnSettings navigation={navigation}/>
 
          <ViewBalance name={"Felipe" + " " + "Meira"} balance={124563.123} />
 

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export function BtnSettings() {
+export function BtnSettings({ navigation }) {
     const BtnSettings = styled.TouchableOpacity`
         height: 50px;
         width: 50px;
@@ -14,7 +14,7 @@ export function BtnSettings() {
     `;
 
     return (
-        <BtnSettings>
+        <BtnSettings onPress={() => navigation.navigate("EditProfile")}>
             <MyButtonIcon source={require("../assets/Icons/iconSettings.png")} />
         </BtnSettings>
     );

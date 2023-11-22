@@ -5,8 +5,9 @@ import { useNavigation } from "@react-navigation/native";
 import { MyInput } from "../components/MyInput";
 import { MyButton } from "../components/MyButton";
 import { MyHomeButton } from "../components/MyHomeButton";
+import { MyButtonText } from "../components/MyButtonText";
 
-export default function Transfer() {
+export default function Loan() {
    const { navigate } = useNavigation()
 
    const MyContainter = styled.View`
@@ -29,11 +30,14 @@ export default function Transfer() {
          <MyHomeButton />
 
          <MyContainter>
+            
             <MyInput placeholder="How mutch?" keyboardType="numeric" />
             
-            <MyInput placeholder="Account number" />
+            <MyInput placeholder="How many installments" keyboardType="numeric"/>
 
-            <MyButton onPress={()=> navigate("TransferDone")} text={"Transfer"} />
+            <MyButton onPress={()=> navigate("Menu")} text={"Apply for loan"}/>
+            <MyButtonText text={"Previous Loans"} onPress={()=> navigate("LoanList")}/>
+
          </MyContainter>
       </View>
    );

@@ -1,12 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import styled from "styled-components/native";
 
-import { MyInput } from "../components/MyInput";
 import { MyButton } from "../components/MyButton";
-import { MyButtonOutlined } from "../components/MyButtonOutlined";
 
 
-export default function Login({ navigation }) {
+export default function TransferDone({ navigation }) {
    const MyPageContainerView = styled.View`
       width: 100%;
       height: 100%;
@@ -32,23 +29,13 @@ export default function Login({ navigation }) {
          <MyContainterView>
             <MyImg source={require("../assets/Images/Logo/LogoBlue.png")} />
 
-            <MyInput placeholder="Email" />
-            <MyInput placeholder="Password" secureTextEntry={true} />
-
             <MyButton
-               text={"Login"}
+               text={"Back to Menu"}
                onPress={() => {
                   navigation.navigate("Menu");
                }}
             />
-            <MyButtonOutlined
-               text={"Register"}
-               onPress={() => {
-                  navigation.navigate("Register");
-               }}
-            />
          </MyContainterView>
-         <StatusBar style="auto" />
       </MyPageContainerView>
    );
 }

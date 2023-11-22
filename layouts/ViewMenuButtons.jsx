@@ -1,6 +1,8 @@
 import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
 
 export const ViewMenuButtons = () => {
+   const { navigate } = useNavigation()
    const MyContainterView = styled.View`
       /* border: 1px solid red; */
       height: 150px;
@@ -32,7 +34,7 @@ export const ViewMenuButtons = () => {
       justify-content: center;
    `;
 
-   const MyButtonIcon = styled.Image`
+   const MyButtonIcon2 = styled.Image`
       width: 80%;
       height: 100%;
       object-fit: contain;
@@ -41,8 +43,8 @@ export const ViewMenuButtons = () => {
    return (
       <MyContainterView>
          <MyButtonContainer>
-            <MyButton>
-               <MyButtonIcon
+            <MyButton onPress={() => navigate("Transfer")}>
+               <MyButtonIcon2
                   source={require("../assets/Icons/iconTransfer.png")}
                />
             </MyButton>
@@ -50,15 +52,15 @@ export const ViewMenuButtons = () => {
          </MyButtonContainer>
 
          <MyButtonContainer>
-            <MyButton>
-               <MyButtonIcon source={require("../assets/Icons/iconLoan.png")} />
+            <MyButton onPress={() => navigate("Loan")}>
+               <MyButtonIcon2 source={require("../assets/Icons/iconLoan.png")} />
             </MyButton>
             <MyButtonText>Loan</MyButtonText>
          </MyButtonContainer>
 
          <MyButtonContainer>
-            <MyButton>
-               <MyButtonIcon
+            <MyButton onPress={() => navigate("CreditCard")}>
+               <MyButtonIcon2
                   source={require("../assets/Icons/iconCreditCard.png")}
                />
             </MyButton>

@@ -7,9 +7,7 @@ export const MyInput = styled.TextInput`
     padding-left: 15px;
     border-color: #00f;
     font-size: 20px;
-    color: #00f;
+    color: ${(props) => (props.disabled ? "#5858b8" : "#00f")};
     border-bottom-width:1px;
-    /* ::placeholder{
-        color:#f0f;
-    } */
-`;
+    background-color: ${(props) => (props.disabled ? "#eeeeee" : "#fff")};
+    `;
