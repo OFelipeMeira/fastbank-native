@@ -14,6 +14,7 @@ import EditAddress from "./pages/EditAddress";
 import Loan from "./pages/Loan";
 import LoanList from "./pages/LoanList";
 import TransferDone from "./pages/TransferDone";
+import SelectAccount from "./pages/SelectAccount";
 
 const Stack = createStackNavigator();
 
@@ -73,6 +74,13 @@ export default function App() {
             <Stack.Screen
                name="LoanList"
                component={LoanList}
+               options={{
+                  headerShown: false,
+               }}
+            />
+            <Stack.Screen
+               name="SelectAccount"
+               component={SelectAccount}
                options={{
                   headerShown: false,
                }}

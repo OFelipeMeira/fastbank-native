@@ -32,7 +32,8 @@ export const ViewBalance = (props) => {
     return (
         <MyContainter1>
             <MyTextTitle>Hello, {props.name}</MyTextTitle>
-            <MyTextBalance>Your balance:  ${props.balance.toFixed(2)}</MyTextBalance>
+            {/* <MyTextBalance>Your balance:  ${props.balance.toFixed(2)}</MyTextBalance> */}
+            <MyTextBalance>Your balance:  ${props.balance}</MyTextBalance>
         </MyContainter1>
     );
 };

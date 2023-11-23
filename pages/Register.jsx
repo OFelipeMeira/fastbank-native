@@ -6,6 +6,8 @@ import { MyInput } from "../components/MyInput";
 import { MyButton } from "../components/MyButton";
 import { MyButtonOutlined } from "../components/MyButtonOutlined";
 
+import { useState } from "react";
+
 export default function Register({ navigation }) {
    const MyPageContainerView = styled.View`
       width: 100%;
@@ -23,14 +25,7 @@ export default function Register({ navigation }) {
    `;
 
    return (
-      <MyPageContainerView
-         style={{
-            flex: 1,
-            backgroundColor: "#fff",
-            alignItems: "center",
-            justifyContent: "center",
-         }}
-      >
+      <MyPageContainerView>
          <MyContainter>
             <MyInput placeholder="Email" />
             <MyInput placeholder="Password" secureTextEntry={true} />
