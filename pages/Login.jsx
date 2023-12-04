@@ -61,12 +61,16 @@ export default function Login({ navigation }) {
     return (
         <MyPageContainerView>
             <MyContainterView>
+                
                 <MyImg source={require("../assets/Images/Logo/LogoBlue.png")} />
+                
                 <MyInput
                     placeholder="Email"
                     onChangeText={setEmail}
                     value={email}
+
                 />
+                
                 <MyInput
                     value={password}
                     onChangeText={setPassword}

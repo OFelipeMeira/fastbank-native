@@ -1,6 +1,9 @@
 import styled from "styled-components/native";
 
-export const MyInput = styled.TextInput`
+
+
+export function MyInput(props) {
+    const Input = styled.TextInput`
     /* border-width: 1px; */
     width: 300px;
     height: 40px;
@@ -11,3 +14,7 @@ export const MyInput = styled.TextInput`
     border-bottom-width:1px;
     background-color: ${(props) => (props.disabled ? "#eeeeee" : "#fff")};
     `;
+    return(
+        <Input placeholder={props.placeholder}/>
+    )
+}
