@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, Text, View, Pressable, Image } from "react-native";
+import { useState } from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -16,83 +17,113 @@ import LoanList from "./pages/LoanList";
 import TransferDone from "./pages/TransferDone";
 import SelectAccount from "./pages/SelectAccount";
 
+import { MyInput } from "./components/MyInput";
+import { MyButton } from "./components/MyButton";
+
 const Stack = createStackNavigator();
 
 export default function App() {
-   return (
-      <NavigationContainer>
-         <Stack.Navigator initialRouteName="Login">
-            <Stack.Screen
-               name="Login"
-               component={Login}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="Register"
-               component={Register}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="Menu"
-               component={Menu}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="Transfer"
-               component={Transfer}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="TransferDone"
-               component={TransferDone}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="EditProfile"
-               component={EditProfile}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="Loan"
-               component={Loan}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="LoanList"
-               component={LoanList}
-               options={{
-                  headerShown: false,
-               }}
-            />
-            <Stack.Screen
-               name="SelectAccount"
-               component={SelectAccount}
-               options={{
-                  headerShown: false,
-               }}
-            />
+   const [email, setEmail] = useState("");
 
-            {/* <Stack.Screen
-               name="EditAddress"
-               component={EditAddress}
-               options={{
-                  headerShown: false,
-               }}/> */}
-         </Stack.Navigator>
-      </NavigationContainer>
+   const login = () => {
+      console.log(email);
+   };
+   return (
+      <>
+         {/* <MyInput
+            placeholder="Email1"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+            style={{width:200, height:50}}
+         />
+         <MyInput
+            placeholder="Email2"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+         />
+         <MyInput
+            placeholder="Email3"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+         />
+         <MyButton text={"Login"} onPress={() => login()} /> */}
+         <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+               <Stack.Screen
+                  name="Login"
+                  component={Login}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="Register"
+                  component={Register}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="Menu"
+                  component={Menu}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="Transfer"
+                  component={Transfer}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="TransferDone"
+                  component={TransferDone}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="EditProfile"
+                  component={EditProfile}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="Loan"
+                  component={Loan}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="LoanList"
+                  component={LoanList}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="SelectAccount"
+                  component={SelectAccount}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+
+               <Stack.Screen
+                  name="EditAddress"
+                  component={EditAddress}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+            </Stack.Navigator>
+         </NavigationContainer>
+      </>
    );
 }
+
+gayn't

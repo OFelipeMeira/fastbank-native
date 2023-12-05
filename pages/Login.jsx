@@ -6,7 +6,7 @@ import { MyButton } from "../components/MyButton";
 import { MyButtonOutlined } from "../components/MyButtonOutlined";
 
 import { useBearStore } from "../Utils/zustand/store";
-import axios from "axios";
+import { api } from "../Utils/api/settings";
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState("");
@@ -18,24 +18,29 @@ export default function Login({ navigation }) {
         setToken(undefined);
     }, []);
 
-    const login = () => {
-        axios
-            .post(
-                "https://1e64-2804-14c-4e7-9ede-38f1-6a6c-4895-7548.ngrok-free.app/api/token/",
-                {
-                    //   email: email,
-                    //   password: password,
-                    email: "admin@admin.com",
-                    password: "123456",
-                }
-            )
-            .then((response) => {
-                setToken(response.data.access);
-                navigation.navigate("SelectAccount");
-            })
-            .catch((err) => {
-                alert(err);
-            });
+    const login = async () => {
+        await api.post(
+                        "api/token/",
+                        {
+                            "email": email,
+                            "password": password,
+                            // email: "admin@admin.com",
+                            // password: "123456",
+                        }
+                    )
+                    .then((response) => {
+                        console.log("========= Data")
+                        console.log(email)
+                        console.log(password)
+                        setToken(response.data.access);
+                        navigation.navigate("SelectAccount");
+                    })
+                    .catch((err) => {
+                        console.log("========= Data")
+                        console.log(email)
+                        console.log(password)
+                        console.log("========= Error")
+                    });
     };
 
     const MyPageContainerView = styled.View`
@@ -66,9 +71,8 @@ export default function Login({ navigation }) {
                 
                 <MyInput
                     placeholder="Email"
-                    onChangeText={setEmail}
+                    onChangeText={(text) => setEmail(text)}
                     value={email}
-
                 />
                 
                 <MyInput
@@ -78,7 +82,7 @@ export default function Login({ navigation }) {
                     secureTextEntry={true}
                 />
 
-                <MyButton text={"Login"} onPress={login} />
+                <MyButton text={"Login"} onPress={() => login()} />
                 <MyButtonOutlined
                     text={"Register"}
                     onPress={() => navigation.navigate("Register")}
