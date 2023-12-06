@@ -6,7 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from "./pages/Login";
-// import Register from "./pages/Register";
+import Register from "./pages/Register";
 // import Menu from "./pages/Menu";
 // import Transfer from "./pages/Transfer";
 // import EditProfile from "./pages/EditProfile";
@@ -32,6 +32,7 @@ export default function App() {
       <>
          <NavigationContainer>
             <Stack.Navigator initialRouteName="Login">
+
                <Stack.Screen
                   name="Login"
                   component={Login}
@@ -39,14 +40,14 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               {/* <Stack.Screen
+               <Stack.Screen
                   name="Register"
                   component={Register}
                   options={{
                      headerShown: false,
                   }}
                />
-               <Stack.Screen
+               {/* <Stack.Screen
                   name="Menu"
                   component={Menu}
                   options={{
