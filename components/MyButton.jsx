@@ -1,25 +1,25 @@
-import styled from "styled-components/native";
+import { TouchableOpacity, Text } from "react-native"
 
-export const MyButton = props => {
-    const MyBtn = styled.TouchableOpacity`
-        border-width: 1px;
-        width: 200px;
-        height: 50px;
-        background-color: #00f;
-        border-radius: 10px;
+import { MyStyle } from "../assets/style/StyleSheet"
 
-        align-items: center;
-        justify-content: center;
-    `;
-
-    const MyBtnText = styled.Text`
-        font-size: 20px;
-        font-weight: 800;
-        color: #fff;
-    `;
+export function MyButtonFilled(props) {
     return (
-        <MyBtn onPress={props.onPress}>
-            <MyBtnText>{props.text}</MyBtnText>
-        </MyBtn>
-    );
-};
+        <TouchableOpacity
+            style={[MyStyle.buttonFilled, props.styleBtn]}
+            onPress={props.onPress}
+        >
+            <Text style={[MyStyle.buttonTextFilled, props.styleText]}>{props.text}</Text>
+        </TouchableOpacity>
+    )
+}
+
+export function MyButtonEmpty(props) {
+    return (
+        <TouchableOpacity
+            style={[MyStyle.buttonEmpty, props.styleBtn]}
+            onPress={props.onPress}
+        >
+            <Text style={[MyStyle.buttonTextEmpty, props.styleText]}>{props.text}</Text>
+        </TouchableOpacity>
+    )
+}

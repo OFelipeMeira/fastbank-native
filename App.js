@@ -6,19 +6,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Menu from "./pages/Menu";
-import Transfer from "./pages/Transfer";
-import EditProfile from "./pages/EditProfile";
-import EditAddress from "./pages/EditAddress";
+// import Register from "./pages/Register";
+// import Menu from "./pages/Menu";
+// import Transfer from "./pages/Transfer";
+// import EditProfile from "./pages/EditProfile";
+// import EditAddress from "./pages/EditAddress";
 
-import Loan from "./pages/Loan";
-import LoanList from "./pages/LoanList";
-import TransferDone from "./pages/TransferDone";
-import SelectAccount from "./pages/SelectAccount";
+// import Loan from "./pages/Loan";
+// import LoanList from "./pages/LoanList";
+// import TransferDone from "./pages/TransferDone";
+// import SelectAccount from "./pages/SelectAccount";
 
 import { MyInput } from "./components/MyInput";
-import { MyButton } from "./components/MyButton";
+// import { MyButton } from "./components/MyButton";
 
 const Stack = createStackNavigator();
 
@@ -30,23 +30,6 @@ export default function App() {
    };
    return (
       <>
-         {/* <MyInput
-            placeholder="Email1"
-            onChangeText={(text) => setEmail(text)}
-            value={email}
-            style={{width:200, height:50}}
-         />
-         <MyInput
-            placeholder="Email2"
-            onChangeText={(text) => setEmail(text)}
-            value={email}
-         />
-         <MyInput
-            placeholder="Email3"
-            onChangeText={(text) => setEmail(text)}
-            value={email}
-         />
-         <MyButton text={"Login"} onPress={() => login()} /> */}
          <NavigationContainer>
             <Stack.Navigator initialRouteName="Login">
                <Stack.Screen
@@ -56,7 +39,7 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               <Stack.Screen
+               {/* <Stack.Screen
                   name="Register"
                   component={Register}
                   options={{
@@ -119,11 +102,9 @@ export default function App() {
                   options={{
                      headerShown: false,
                   }}
-               />
+               /> */}
             </Stack.Navigator>
          </NavigationContainer>
       </>
    );
 }
-
-gayn't
