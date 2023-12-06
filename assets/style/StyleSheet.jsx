@@ -39,4 +39,9 @@ export const MyStyle = StyleSheet.create({
         fontWeight:"400"
     },
 
+    textTitle:{
+        fontSize:20,
+        fontWeight:"500"
+    }
+
 })

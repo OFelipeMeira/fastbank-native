@@ -1,7 +1,7 @@
 // import styled from "styled-components/native";
 import { useEffect, useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Image, View } from "react-native";
 
 import { MyInput } from "../components/MyInput";
 import { MyButtonFilled } from "../components/MyButton";
@@ -27,10 +27,10 @@ export default function Login({ navigation }) {
       await api.post(
          "api/token/",
          {
-            "email": email,
-            "password": password,
-            // "email":"admin@admin.com",
-            // "password":"123456"
+            // "email": email,
+            // "password": password,
+            "email":"admin@admin.com",
+            "password":"123456"
          }
       )
          .then((response) => {

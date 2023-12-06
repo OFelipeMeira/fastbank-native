@@ -10,6 +10,7 @@ export function MyInput(props) {
             value={props.value}
             style={[MyStyle.input, props.style]}
             secureTextEntry={props.secureTextEntry}
+            keyboardType={props.keyboardType}
         />
     )
 }
