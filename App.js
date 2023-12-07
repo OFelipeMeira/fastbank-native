@@ -16,6 +16,8 @@ import LoanList from "./pages/LoanList";
 import Credit from "./pages/Credit";
 import CreditList from "./pages/CreditList";
 
+import Profile from "./pages/Profile";
+
 // import EditProfile from "./pages/EditProfile";
 // import EditAddress from "./pages/EditAddress";
 
@@ -100,6 +102,14 @@ export default function App() {
                <Stack.Screen
                   name="CreditList"
                   component={CreditList}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+
+               <Stack.Screen
+                  name="Profile"
+                  component={Profile}
                   options={{
                      headerShown: false,
                   }}

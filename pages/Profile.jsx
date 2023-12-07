@@ -11,11 +11,9 @@ import { useFocusEffect } from "@react-navigation/native";
 import { MyStyle } from "../assets/style/StyleSheet";
 import { MyTitle } from "../components/MyText";
 
-export default function Menu({ navigation }) {
+export default function Profile({ navigation }) {
    const account_id = useBearStore((state) => state.account_id);
-   const setAccount_id = useBearStore((state) => state.setAccount_id);
    const token = useBearStore((state) => state.token);
-   const name = useBearStore((state) => state.name);
 
    const [balance, setBalance] = useState("");
    const [transactions, setTransactions] = useState("");
@@ -32,29 +30,12 @@ export default function Menu({ navigation }) {
             console.log("=========== ERRROOOOO");
             console.log(err);
          });
-
-      api.get(`api/v1/transfer/${account_id}/statement/`, {
-         headers: { Authorization: "Bearer " + token },
-      })
-         .then((response) => {
-            // console.log(response.data);
-            setTransactions(response.data);
-         })
-         .catch((err) => {
-            alert(err);
-            console.log(err);
-         });
    };
 
    useEffect(() => {
       getData();
    }, []);
 
-   useFocusEffect(
-      useCallback(() => {
-         getData();
-      }, [])
-   );
 
    return (
       <View style={[MyStyle.center, { flex: 1 }]}>
@@ -102,16 +83,6 @@ export default function Menu({ navigation }) {
                   style={{ width: 30, height: 30, backgroundColor: "#00f" }}
                ></View>
                <Text>Credit</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-               style={{ justifyContent: "center", alignItems: "center" }}
-               onPress={() => navigation.navigate("Profile")}
-            >
-               <View
-                  style={{ width: 30, height: 30, backgroundColor: "#00f" }}
-               ></View>
-               <Text>Profile</Text>
             </TouchableOpacity>
          </View>
 
