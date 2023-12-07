@@ -7,16 +7,16 @@ import { api } from "../Utils/api/Settings";
 import { useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
 
-export default function Loan({ navigation }) {
+export default function Credit({ navigation }) {
    const token = useBearStore((state) => state.token);
    const account_id = useBearStore((state) => state.account_id);
 
    const [value, setValue] = useState("");
    const [installments, setInstallments] = useState("");
 
-   const loan = () => {
+   const credit = () => {
       api.post(
-         `api/v1/loan/`,
+         `api/v1/credit/`,
          {
             account: account_id,
             installments: installments,
@@ -50,7 +50,7 @@ export default function Loan({ navigation }) {
                { height: 400, justifyContent: "space-evenly" },
             ]}
          >
-            <Text>Loan</Text>
+            <Text>Credit</Text>
 
             <MyInput
                style={{ width: 300 }}
@@ -67,15 +67,15 @@ export default function Loan({ navigation }) {
             />
 
             <MyButtonFilled
-               styleBtn={{ width: 150, height: 40 }}
-               onPress={() => loan()}
-               text={"Apply for loan"}
+               styleBtn={{ width: 160, height: 40 }}
+               onPress={() => credit()}
+               text={"Pay with Credit"}
             />
 
             <MyButtonEmpty
                styleBtn={{ width: 150, height: 40 }}
-               onPress={() => navigation.navigate("LoanList")}
-               text={"My Loans"}
+               onPress={() => navigation.navigate("CreditList")}
+               text={"My buys"}
             />
          </View>
       </View>

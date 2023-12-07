@@ -3,8 +3,10 @@ import { api } from "../Utils/api/Settings";
 
 // import { BtnSettings } from "../layouts/BtnSettings";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
+
+import { useFocusEffect } from "@react-navigation/native";
 
 import { MyStyle } from "../assets/style/StyleSheet";
 import { MyTitle } from "../components/MyText";
@@ -46,7 +48,13 @@ export default function Menu({ navigation }) {
 
    useEffect(() => {
       getData();
-   },[]);
+   }, []);
+
+   useFocusEffect(
+      useCallback(() => {
+         getData();
+      }, [])
+   );
 
    return (
       <View style={[MyStyle.center, { flex: 1 }]}>
@@ -86,17 +94,15 @@ export default function Menu({ navigation }) {
                <Text>Loan</Text>
             </TouchableOpacity>
 
-            {/* 
-                <TouchableOpacity
-                    style={{ justifyContent: "center", alignItems: "center" }}
-                    onPress={navigation.navigate("Transfer")}
-                >
-                    <View  style={{ width: 30, height: 30, backgroundColor: "#00f" }}>
-
-                    </View>
-                    <Text>Credit</Text>
-                </TouchableOpacity>
-                */}
+            <TouchableOpacity
+               style={{ justifyContent: "center", alignItems: "center" }}
+               onPress={() => navigation.navigate("Credit")}
+            >
+               <View
+                  style={{ width: 30, height: 30, backgroundColor: "#00f" }}
+               ></View>
+               <Text>Credit</Text>
+            </TouchableOpacity>
          </View>
 
          {/* show statement of transactions */}

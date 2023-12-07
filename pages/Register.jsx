@@ -28,11 +28,9 @@ export default function Register({ navigation }) {
                 "first_name": firstName,
                 "last_name": lastName,
                 "cpf": cpf
-
             }
         )
             .then((response) => {
-                create_account()
                 console.log("REGISTRADO")
                 // console.log(response)
                 navigation.navigate("Login");
@@ -45,7 +43,7 @@ export default function Register({ navigation }) {
                 console.log(lastName)
                 console.log(cpf)
                 console.log("========= Error")
-                console.log(err.response)
+                console.log(err)
                 console.log("========= Error")
             });
     }

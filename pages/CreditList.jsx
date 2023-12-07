@@ -7,15 +7,16 @@ import { api } from "../Utils/api/Settings";
 import { useEffect, useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
 
-export default function LoanList({ navigation }) {
+export default function CreditList({ navigation }) {
    const token = useBearStore((state) => state.token);
+   const account_id = useBearStore((state) => state.account_id);
 
    const [data, setData] = useState();
 
-   const loanList = () => {
-      api.get(`api/v1/loan/`, { headers: { Authorization: "Bearer " + token } })
+   const creditList = () => {
+      api.get(`api/v1/credit/${account_id}`, { headers: { Authorization: "Bearer " + token } })
          .then((response) => {
-            // console.log(response.data);
+            console.log(response.data);
             setData(response.data);
          })
          .catch((err) => {
@@ -25,7 +26,7 @@ export default function LoanList({ navigation }) {
    };
 
    useEffect(() => {
-      loanList();
+      creditList();
    }, []);
 
    return (
@@ -38,7 +39,7 @@ export default function LoanList({ navigation }) {
          }}
       >
          <View style={[MyStyle.center, { height: 600, width: 300 }]}>
-            <Text>Loan List</Text>
+            <Text>Credit List</Text>
             <FlatList
                data={data}
                renderItem={({ item }) => (

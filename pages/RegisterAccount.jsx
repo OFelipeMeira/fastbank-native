@@ -27,7 +27,7 @@ export default function RegisterAccount({ navigation }) {
             .then((response) => {
                 console.log("========= Data")
                 console.log("REGISTRADO")
-                navigation.navigate("Login");
+                navigation.navigate("SelectAccount");
             })
             .catch((err) => {
                 console.log("========= Error")

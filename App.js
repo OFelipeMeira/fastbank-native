@@ -13,6 +13,8 @@ import Menu from "./pages/Menu";
 import Transfer from "./pages/Transfer";
 import Loan from "./pages/Loan";
 import LoanList from "./pages/LoanList";
+import Credit from "./pages/Credit";
+import CreditList from "./pages/CreditList";
 
 // import EditProfile from "./pages/EditProfile";
 // import EditAddress from "./pages/EditAddress";
@@ -88,6 +90,20 @@ export default function App() {
                      headerShown: false,
                   }}
                />
+               <Stack.Screen
+                  name="Credit"
+                  component={Credit}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="CreditList"
+                  component={CreditList}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
 
                {/* 
                
@@ -98,15 +114,6 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               <Stack.Screen
-                  name="LoanList"
-                  component={LoanList}
-                  options={{
-                     headerShown: false,
-                  }}
-               />
-               
-
                <Stack.Screen
                   name="EditAddress"
                   component={EditAddress}
