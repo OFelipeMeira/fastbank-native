@@ -10,32 +10,22 @@ import Register from "./pages/Register";
 import RegisterAccount from "./pages/RegisterAccount";
 import SelectAccount from "./pages/SelectAccount";
 import Menu from "./pages/Menu";
-
-
 import Transfer from "./pages/Transfer";
+import Loan from "./pages/Loan";
+import LoanList from "./pages/LoanList";
+
 // import EditProfile from "./pages/EditProfile";
 // import EditAddress from "./pages/EditAddress";
 
-// import Loan from "./pages/Loan";
-// import LoanList from "./pages/LoanList";
 // import TransferDone from "./pages/TransferDone";
-
-import { MyInput } from "./components/MyInput";
-// import { MyButton } from "./components/MyButton";
 
 const Stack = createStackNavigator();
 
 export default function App() {
-   const [email, setEmail] = useState("");
-
-   const login = () => {
-      console.log(email);
-   };
    return (
       <>
          <NavigationContainer>
             <Stack.Navigator initialRouteName="Login">
-
                <Stack.Screen
                   name="Login"
                   component={Login}
@@ -43,7 +33,7 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               
+
                <Stack.Screen
                   name="Register"
                   component={Register}
@@ -51,7 +41,7 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               
+
                <Stack.Screen
                   name="RegisterAccount"
                   component={RegisterAccount}
@@ -59,7 +49,7 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               
+
                <Stack.Screen
                   name="SelectAccount"
                   component={SelectAccount}
@@ -67,7 +57,7 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               
+
                <Stack.Screen
                   name="Menu"
                   component={Menu}
@@ -75,34 +65,35 @@ export default function App() {
                      headerShown: false,
                   }}
                />
-               
-                <Stack.Screen
+
+               <Stack.Screen
                   name="Transfer"
                   component={Transfer}
                   options={{
                      headerShown: false,
                   }}
                />
-               
-               {/* 
-              
-               <Stack.Screen
-                  name="TransferDone"
-                  component={TransferDone}
-                  options={{
-                     headerShown: false,
-                  }}
-               />
-               <Stack.Screen
-                  name="EditProfile"
-                  component={EditProfile}
-                  options={{
-                     headerShown: false,
-                  }}
-               />
+
                <Stack.Screen
                   name="Loan"
                   component={Loan}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+               <Stack.Screen
+                  name="LoanList"
+                  component={LoanList}
+                  options={{
+                     headerShown: false,
+                  }}
+               />
+
+               {/* 
+               
+               <Stack.Screen
+                  name="EditProfile"
+                  component={EditProfile}
                   options={{
                      headerShown: false,
                   }}

@@ -1,71 +1,68 @@
-import { View } from "react-native";
-// import { useNavigation } from "@react-navigation/native";
+import { View, Text } from "react-native";
 import { useBearStore } from "../Utils/zustand/store";
 
 import { MyInput } from "../components/MyInput";
-import { MyButton } from "../components/MyButton";
-// import { MyHomeButton } from "../components/MyHomeButton";
+import { MyButtonFilled } from "../components/MyButton";
 import { api } from "../Utils/api/Settings";
-import { MyStyle } from "../assets/style/StyleSheet";
 import { useState } from "react";
+import { MyStyle } from "../assets/style/StyleSheet";
 
 export default function Transfer({ navigation }) {
+   const token = useBearStore((state) => state.token);
+   const account_id = useBearStore((state) => state.account_id);
 
-    const token = useBearStore((state) => state.token);
-    const account_id = useBearStore((state) => state.account_id);
+   const [value, setValue] = useState("");
+   const [receiver, setReceiver] = useState("");
+   const [description, setDescription] = useState("");
 
-    const [value, setValue] = useState('')
-    const [receiver, setReceiver] = useState('')
-    const [description, setDescription] = useState('')
+   const transfer = () => {
+      api.post(
+         `api/v1/transfer/`,
+         {
+            value: value,
+            sender: account_id,
+            receiver: receiver,
+            description: description,
+         },
+         { headers: { Authorization: "Bearer " + token } }
+      )
+         .then((response) => {
+            // navigation.navigate("TransferDone")
+            navigation.navigate("Menu");
+            alert(response.data.message);
+         })
+         .catch((err) => {
+            console.log("========= ERRO na transferencia");
+            console.log(err);
+         });
+   };
 
-    const transfer = () => {
-        api.post(
-            `api/v1/transfer/`,
-            {
-                "value": value,
-                "sender": account_id,
-                "receiver": receiver,
-                "description": description
-            },
-            { headers: { Authorization: "Bearer " + token } }
-        )
-            .then(response => {
-                console.log("FOI")
-                // navigation.navigate("TransferDone")
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+   return (
+      <View
+         style={{
+            flex: 1,
+            backgroundColor: "#fff",
+            alignItems: "center",
+            justifyContent: "center",
+         }}
+      >
+         {/* <MyHomeButton /> */}
 
-    return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: "#fff",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
-            {/* <MyHomeButton /> */}
+         <Text>New Transaction</Text>
 
-            <View>
+         <View style={[MyStyle.center, {height: 400, justifyContent: "space-evenly"}]}>
+            <MyInput style={{width: 300}}
+               placeholder="How mutch?"
+               keyboardType="numeric"
+               onChangeText={setValue}
+            />
 
-                <MyInput
-                    placeholder="How mutch?"
-                    keyboardType="numeric"
-                />
+            <MyInput style={{width: 300}} placeholder="Account number" onChangeText={setReceiver} />
 
-                <MyInput
-                    placeholder="Account number"
-                />
+            <MyInput style={{width: 300}} placeholder="Description" onChangeText={setDescription} />
 
-                <MyButton
-                    onPress={() => transfer() }
-                    text={"Transfer"}
-                />
-
-            </View>
-        </View>
-    );
+            <MyButtonFilled styleBtn={{width: 120, height: 40}} onPress={() => transfer()} text={"Transfer"} />
+         </View>
+      </View>
+   );
 }

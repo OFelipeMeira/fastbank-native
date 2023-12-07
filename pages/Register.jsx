@@ -33,7 +33,6 @@ export default function Register({ navigation }) {
         )
             .then((response) => {
                 create_account()
-                console.log("========= Data")
                 console.log("REGISTRADO")
                 // console.log(response)
                 navigation.navigate("Login");

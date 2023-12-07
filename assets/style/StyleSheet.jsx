@@ -12,7 +12,7 @@ export const MyStyle = StyleSheet.create({
         fontWeight:"400",
         borderWidth: 0,
         borderBottomWidth: 1.5,
-        borderColor: "#00f"
+        borderColor: "#00f",
     },
     buttonFilled:{
         backgroundColor: "#00F",

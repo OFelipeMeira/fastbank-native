@@ -26,12 +26,12 @@ export default function SelectAccount({ navigation }) {
 
         api.get("api/v1/accounts", { headers: { Authorization: "Bearer " + token } })
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setData(response.data)
             })
             .catch(err => {
+                // console.log(err)
                 alert(err)
-                console.log(err)
             })
     };
 
@@ -45,8 +45,8 @@ export default function SelectAccount({ navigation }) {
                 setName(response.data.first_name + " " + response.data.last_name)
             })
             .catch(err => {
+                // console.log(err)
                 alert(err)
-                console.log(err)
             })
     };
 
@@ -73,7 +73,7 @@ export default function SelectAccount({ navigation }) {
                                     setAccount_id(item.id);
                                     navigation.navigate("Menu");
                                 }}
-                                style={{ borderWidth: 1, marginBottom: 10 }}
+                                style={{ borderWidth: 1, borderRadius: 5 , marginBottom: 10 }}
                             >
                                 <Text style={{ paddingLeft: 5 }}>{item.nickname}</Text>
                                 <Text style={{ paddingLeft: 5 }}>{item.agency} {item.number}</Text>

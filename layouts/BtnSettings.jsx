@@ -14,8 +14,9 @@ export function BtnSettings({ navigation }) {
     `;
 
     return (
-        <BtnSettings onPress={() => navigation.navigate("EditProfile")}>
-            <MyButtonIcon source={require("../assets/Icons/iconSettings.png")} />
-        </BtnSettings>
+        // <BtnSettings onPress={() => navigation.navigate("EditProfile")}>
+        //     <MyButtonIcon source={require("../assets/Icons/iconSettings.png")} />
+        // </BtnSettings>
+        <></>
     );
 }

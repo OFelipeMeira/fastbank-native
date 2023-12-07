@@ -32,7 +32,6 @@ export default function RegisterAccount({ navigation }) {
             .catch((err) => {
                 console.log("========= Error")
                 console.log(err.response)
-                console.log("========= Error")
             });
     }
 
