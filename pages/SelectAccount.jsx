@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { api } from "../Utils/api/Settings";
 import { MyStyle } from "../assets/style/StyleSheet";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect } from "@react-navigation/native";
 
 import { MyTitle } from "../components/MyText";
 
@@ -55,6 +55,13 @@ export default function SelectAccount({ navigation }) {
         getPersonalInfo()
     }, [])
 
+    useFocusEffect(
+        useCallback(() => {
+            getData();
+            getPersonalInfo();
+        }, [])
+    );
+
     return (
         <View style={[MyStyle.center, { flex: 1 }]}
         >
@@ -73,7 +80,7 @@ export default function SelectAccount({ navigation }) {
                                     setAccount_id(item.id);
                                     navigation.navigate("Menu");
                                 }}
-                                style={{ borderWidth: 1, borderRadius: 5 , marginBottom: 10 }}
+                                style={{ borderWidth: 1, borderRadius: 5, marginBottom: 10 }}
                             >
                                 <Text style={{ paddingLeft: 5 }}>{item.nickname}</Text>
                                 <Text style={{ paddingLeft: 5 }}>{item.agency} {item.number}</Text>

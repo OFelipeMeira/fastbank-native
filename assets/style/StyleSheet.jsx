@@ -15,6 +15,11 @@ export const MyStyle = StyleSheet.create({
         borderBottomWidth: 1.5,
         borderColor: "#00f",
     },
+    inputLabel:{
+        color:"#00f",
+        fontSize: 15,
+        fontWeight:"400"
+    },
     buttonFilled:{
         backgroundColor: "#00F",
         textAlign:"center",

@@ -49,12 +49,12 @@ export default function RegisterAccount({ navigation }) {
                     styleBtn={{ width: 150, height: 50 }}
                     styleText={{}}
                 />
-                <MyButtonEmpty
+                {/* <MyButtonEmpty
                     text={"My accounts"}
                     onPress={() => navigation.navigate("SelectAccount")}
                     styleBtn={{ width: 150, height: 50 }}
                     styleText={{}}
-                />
+                /> */}
             </View>
         </View>
     );
