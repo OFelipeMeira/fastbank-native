@@ -39,6 +39,7 @@ export default function Menu({ navigation }) {
          .then((response) => {
             // console.log(response.data);
             setTransactions(response.data);
+            console.log(transactions.slice(-1))
          })
          .catch((err) => {
             alert(err);
@@ -113,6 +114,27 @@ export default function Menu({ navigation }) {
                ></View>
                <Text>Profile</Text>
             </TouchableOpacity>
+            
+            <TouchableOpacity
+               style={{ justifyContent: "center", alignItems: "center" }}
+               onPress={() => navigation.navigate("Deposit")}
+            >
+               <View
+                  style={{ width: 30, height: 30, backgroundColor: "#00f" }}
+               ></View>
+               <Text>Deposit</Text>
+            </TouchableOpacity>
+          
+            <TouchableOpacity
+               style={{ justifyContent: "center", alignItems: "center" }}
+               onPress={() => navigation.navigate("Withdraw")}
+            >
+               <View
+                  style={{ width: 30, height: 30, backgroundColor: "#00f" }}
+               ></View>
+               <Text>Withdraw</Text>
+            </TouchableOpacity>
+
          </View>
 
          {/* show statement of transactions */}
