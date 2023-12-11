@@ -23,10 +23,10 @@ export default function Login({ navigation }) {
       await api.post(
          "api/token/",
          {
-            // "email": email,
-            // "password": password,
-            "email": "admin@admin.com",
-            "password": "123456"
+            "email": email,
+            "password": password,
+            // "email": "admin@admin.com",
+            // "password": "123456"
          }
       )
          .then((response) => {
@@ -44,6 +44,11 @@ export default function Login({ navigation }) {
             console.log("========= Error")
             console.log(err)
             console.log("========= Error")
+            if (err.response.data.detail) {
+               alert(err.response.data.detail)
+            }else{
+               alert("No Account Found")
+            }
          });
    };
 
@@ -81,7 +86,7 @@ export default function Login({ navigation }) {
                onPress={() => navigation.navigate("Register")}
             />
          </View>
-         
+
       </View>
    );
 }
