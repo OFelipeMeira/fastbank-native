@@ -10,7 +10,6 @@ import { useFocusEffect } from "@react-navigation/native";
 
 import { MyStyle } from "../assets/style/StyleSheet";
 import { MyInput } from "../components/MyInput";
-import { MyButtonFilled } from "../components/MyButton";
 
 import * as ImagePicker from "expo-image-picker";
 
@@ -39,7 +38,6 @@ export default function Profile({ navigation }) {
         console.log(userData);
     }, [userData]);
 
-    /* NEED TO TEST */
     useEffect(() => {
         console.log(selectedImage);
         if (selectedImage) {

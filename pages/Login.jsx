@@ -51,10 +51,6 @@ export default function Login({ navigation }) {
          });
    };
 
-   useEffect(() => {
-      login()
-   }, [])
-
    return (
       <View style={[MyStyle.center, { flex: 1 }]}>
          <View style={[MyStyle.center, { width: 300, height: 600, justifyContent: "space-evenly" }]}>
