@@ -45,7 +45,9 @@ export default function Deposit({ navigation }) {
                     { height: 400, justifyContent: "space-evenly" },
                 ]}
             >
-                <Text>Deposit</Text>
+                <MyTitle
+                    text={"Deposit"}
+                />
 
                 <MyInput
                     style={{ width: 300 }}

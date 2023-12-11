@@ -47,7 +47,8 @@ export const MyStyle = StyleSheet.create({
 
     textTitle:{
         fontSize:20,
-        fontWeight:"500"
+        fontWeight:"500",
+        color:'#00F'
     }
 
 })

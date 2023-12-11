@@ -50,7 +50,10 @@ export default function Credit({ navigation }) {
                { height: 400, justifyContent: "space-evenly" },
             ]}
          >
-            <Text>Credit</Text>
+            <MyTitle
+               text={"Credit"}
+            />
+
 
             <MyInput
                style={{ width: 300 }}

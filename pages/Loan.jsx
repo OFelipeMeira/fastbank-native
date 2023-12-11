@@ -50,7 +50,9 @@ export default function Loan({ navigation }) {
                { height: 400, justifyContent: "space-evenly" },
             ]}
          >
-            <Text>Loan</Text>
+            <MyTitle
+               text={"Loan"}
+            />
 
             <MyInput
                style={{ width: 300 }}

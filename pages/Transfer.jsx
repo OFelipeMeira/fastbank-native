@@ -6,6 +6,7 @@ import { MyButtonFilled } from "../components/MyButton";
 import { api } from "../Utils/api/Settings";
 import { useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
+import { MyTitle } from "../components/MyText";
 
 export default function Transfer({ navigation }) {
    const token = useBearStore((state) => state.token);
@@ -46,9 +47,10 @@ export default function Transfer({ navigation }) {
             justifyContent: "center",
          }}
       >
-         {/* <MyHomeButton /> */}
 
-         <Text>New Transaction</Text>
+         <MyTitle
+            text={"New Transaction"}
+         />
 
          <View style={[MyStyle.center, {height: 400, justifyContent: "space-evenly"}]}>
             <MyInput style={{width: 300}}

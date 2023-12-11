@@ -45,7 +45,9 @@ export default function Withdraw({ navigation }) {
                     { height: 400, justifyContent: "space-evenly" },
                 ]}
             >
-                <Text>Withdraw</Text>
+                <MyTitle
+                    text={"Withdraw"}
+                />
 
                 <MyInput
                     style={{ width: 300 }}
