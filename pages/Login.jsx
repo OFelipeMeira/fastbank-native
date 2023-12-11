@@ -1,16 +1,12 @@
-// import styled from "styled-components/native";
+import { useBearStore } from "../Utils/zustand/store";
+import { api } from "../Utils/api/Settings";
 import { useEffect, useState } from "react";
-import { MyStyle } from "../assets/style/StyleSheet";
 import { Image, View } from "react-native";
+import { MyStyle } from "../assets/style/StyleSheet";
 
 import { MyInput } from "../components/MyInput";
 import { MyButtonFilled } from "../components/MyButton";
 import { MyButtonEmpty } from "../components/MyButton";
-// import { TouchableOpacity } from "../components/TouchableOpacity";
-// import { TouchableOpacityOutlined } from "../components/TouchableOpacityOutlined";
-
-import { useBearStore } from "../Utils/zustand/store";
-import { api } from "../Utils/api/Settings";
 
 
 export default function Login({ navigation }) {
@@ -55,7 +51,9 @@ export default function Login({ navigation }) {
       <View style={[MyStyle.center, { flex: 1 }]}>
          <View style={[MyStyle.center, { width: 300, height: 600, justifyContent: "space-evenly" }]}>
 
-            <Image source={require("../assets/Images/Logo/LogoBlue.png")} />
+            <Image
+               source={require("../assets/Images/Logo/LogoBlue.png")}
+            />
 
             <MyInput
                placeholder="Email"
@@ -76,7 +74,6 @@ export default function Login({ navigation }) {
                text={"Login"}
                onPress={() => login()}
                styleBtn={{ width: 150, height: 50 }}
-               styleText={{}}
             />
 
             <MyButtonEmpty
@@ -84,6 +81,7 @@ export default function Login({ navigation }) {
                onPress={() => navigation.navigate("Register")}
             />
          </View>
+         
       </View>
    );
 }

@@ -4,20 +4,17 @@ import { MyStyle } from "../assets/style/StyleSheet";
 import { api } from "../Utils/api/Settings";
 
 import { MyInput } from "../components/MyInput";
-import { MyButtonEmpty } from "../components/MyButton";
 import { MyButtonFilled } from "../components/MyButton";
-// import { MyButtonFilledOutlined } from "../components/MyButtonFilledOutlined";
-
 
 
 export default function Register({ navigation }) {
 
-   const [email, setEmail] = useState("");
-   const [firstName, setFirstName] = useState("");
-   const [lastName, setLastName] = useState("");
-   const [cpf, setCpf] = useState("");
-   const [password, setPassword] = useState("");
-    
+    const [email, setEmail] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [password, setPassword] = useState("");
+
 
     const register = async () => {
         await api.post(
@@ -51,11 +48,31 @@ export default function Register({ navigation }) {
     return (
         <View style={[MyStyle.center, { flex: 1 }]}>
             <View style={[MyStyle.center, { width: 300, height: 500, justifyContent: "space-evenly" }]}>
-                <MyInput onChangeText={(text) => setEmail(text)}     style={{ width: 300 }} placeholder="Email" />
-                <MyInput onChangeText={(text) => setPassword(text)}  style={{ width: 300 }} placeholder="Password" secureTextEntry={true} />
-                <MyInput onChangeText={(text) => setFirstName(text)} style={{ width: 300 }} placeholder="First Name" />
-                <MyInput onChangeText={(text) => setLastName(text)}  style={{ width: 300 }} placeholder="Last Name" />
-                <MyInput onChangeText={(text) => setCpf(text)}       style={{ width: 300 }} placeholder="CPF" />
+                <MyInput
+                    onChangeText={(text) => setEmail(text)}
+                    style={{ width: 300 }}
+                    placeholder="Email"
+                />
+                <MyInput
+                    onChangeText={(text) => setPassword(text)}
+                    style={{ width: 300 }}
+                    placeholder="Password" secureTextEntry={true}
+                />
+                <MyInput
+                    onChangeText={(text) => setFirstName(text)}
+                    style={{ width: 300 }}
+                    placeholder="First Name"
+                />
+                <MyInput
+                    onChangeText={(text) => setLastName(text)}
+                    style={{ width: 300 }}
+                    placeholder="Last Name"
+                />
+                <MyInput
+                    onChangeText={(text) => setCpf(text)}
+                    style={{ width: 300 }}
+                    placeholder="CPF"
+                />
 
                 <MyButtonFilled
                     text={"Register"}

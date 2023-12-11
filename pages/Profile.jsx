@@ -1,19 +1,14 @@
 import { useBearStore } from "../Utils/zustand/store";
 import { api } from "../Utils/api/Settings";
-
-// import { BtnSettings } from "../layouts/BtnSettings";
-
 import { useEffect, useState, useCallback } from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-
 import { useFocusEffect } from "@react-navigation/native";
+import * as ImagePicker from "expo-image-picker";
+import BlankProfile from "../assets/Images/blank-profile.png";
 
 import { MyStyle } from "../assets/style/StyleSheet";
 import { MyInput } from "../components/MyInput";
 
-import * as ImagePicker from "expo-image-picker";
-
-import BlankProfile from "../assets/Images/blank-profile.png";
 
 export default function Profile({ navigation }) {
     const account_id = useBearStore((state) => state.account_id);

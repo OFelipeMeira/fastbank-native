@@ -39,7 +39,11 @@ export default function CreditList({ navigation }) {
          }}
       >
          <View style={[MyStyle.center, { height: 600, width: 300 }]}>
-            <Text>Credit List</Text>
+            
+            <MyTitle
+               text={"Credit List"}
+            />
+            
             <FlatList
                data={data}
                renderItem={({ item }) => (
@@ -64,6 +68,7 @@ export default function CreditList({ navigation }) {
                   padding: 10,
                }}
             />
+            
          </View>
       </View>
    );

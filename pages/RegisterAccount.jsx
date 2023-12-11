@@ -4,7 +4,7 @@ import { MyStyle } from "../assets/style/StyleSheet";
 import { api } from "../Utils/api/Settings";
 
 import { MyInput } from "../components/MyInput";
-import { MyButtonEmpty, MyButtonFilled } from "../components/MyButton";
+import { MyButtonFilled } from "../components/MyButton";
 import { MyTitle } from "../components/MyText";
 
 import { useBearStore } from "../Utils/zustand/store";
@@ -49,12 +49,6 @@ export default function RegisterAccount({ navigation }) {
                     styleBtn={{ width: 150, height: 50 }}
                     styleText={{}}
                 />
-                {/* <MyButtonEmpty
-                    text={"My accounts"}
-                    onPress={() => navigation.navigate("SelectAccount")}
-                    styleBtn={{ width: 150, height: 50 }}
-                    styleText={{}}
-                /> */}
             </View>
         </View>
     );

@@ -6,6 +6,7 @@ import { MyButtonEmpty, MyButtonFilled } from "../components/MyButton";
 import { api } from "../Utils/api/Settings";
 import { useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
+import { MyTitle } from "../components/MyText";
 
 export default function Deposit({ navigation }) {
     const token = useBearStore((state) => state.token);

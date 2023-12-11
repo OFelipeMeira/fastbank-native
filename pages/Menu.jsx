@@ -4,15 +4,14 @@ import { api } from "../Utils/api/Settings";
 // import { BtnSettings } from "../layouts/BtnSettings";
 
 import { useEffect, useState, useCallback } from "react";
-import { View, Image, TouchableOpacity } from "react-native";
-
+import { View } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 
 import { MyStyle } from "../assets/style/StyleSheet";
 import { MyMenuHeader } from "../components/MyMenuHeader";
 import { MyMenuButtons } from "../components/MyMenuButtons";
 import { MyMenuTransactions } from "../components/MyMenuTransactions";
-import BlankProfile from "../assets/Images/blank-profile.png";
+import { BlankProfile } from "../assets/Images/blank-profile.png";
 import { MyProfileButton } from "../components/MyProfileButton";
 
 export default function Menu({ navigation }) {
@@ -71,7 +70,7 @@ export default function Menu({ navigation }) {
       getData();
    }, []);
 
-   // method to update on load
+   // Method to update on load
    useFocusEffect(
       useCallback(() => {
          getData();
@@ -113,7 +112,6 @@ export default function Menu({ navigation }) {
             label={"Transactions"}
             data={transactions}
          />
-
 
       </View>
    );

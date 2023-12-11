@@ -1,11 +1,12 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { useBearStore } from "../Utils/zustand/store";
 
 import { MyInput } from "../components/MyInput";
-import { MyButtonEmpty, MyButtonFilled } from "../components/MyButton";
+import { MyButtonFilled } from "../components/MyButton";
 import { api } from "../Utils/api/Settings";
 import { useState } from "react";
 import { MyStyle } from "../assets/style/StyleSheet";
+import { MyTitle } from "../components/MyText";
 
 export default function Withdraw({ navigation }) {
     const token = useBearStore((state) => state.token);

@@ -1,12 +1,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { api } from "../Utils/api/Settings";
-import { MyStyle } from "../assets/style/StyleSheet";
 import { useFocusEffect } from "@react-navigation/native";
+import { useBearStore } from "../Utils/zustand/store";
+import { MyStyle } from "../assets/style/StyleSheet";
 
 import { MyTitle } from "../components/MyText";
-
-import { useBearStore } from "../Utils/zustand/store";
 import { MyButtonEmpty } from "../components/MyButton";
 
 export default function SelectAccount({ navigation }) {
