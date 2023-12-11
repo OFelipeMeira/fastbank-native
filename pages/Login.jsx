@@ -29,8 +29,8 @@ export default function Login({ navigation }) {
          {
             // "email": email,
             // "password": password,
-            "email":"admin@admin.com",
-            "password":"123456"
+            "email": "admin@admin.com",
+            "password": "123456"
          }
       )
          .then((response) => {
@@ -50,6 +50,10 @@ export default function Login({ navigation }) {
             console.log("========= Error")
          });
    };
+
+   useEffect(() => {
+      login()
+   }, [])
 
    return (
       <View style={[MyStyle.center, { flex: 1 }]}>

@@ -154,9 +154,9 @@ export default function Menu({ navigation }) {
                         <Text style={{ marginLeft: 5, padding: 2 }}>
                            ${item.value}
                         </Text>
-                        <Text style={{ marginLeft: 5, padding: 2 }}>
+                        {/* <Text style={{ marginLeft: 5, padding: 2 }}>
                            {item.receiver.agency} {item.receiver.number}
-                        </Text>
+                        </Text> */}
                         <Text style={{ marginLeft: 5, padding: 2 }}>
                            {item.description}
                         </Text>

@@ -13,7 +13,6 @@ export default function SelectAccount({ navigation }) {
 
     const setAccount_id = useBearStore((state) => state.setAccount_id);
     const token = useBearStore((state) => state.token);
-    // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxODg5NDgwLCJpYXQiOjE3MDE4ODU4ODAsImp0aSI6ImRmN2VlMTZmOTNkMjRkOGZiZGEwYzcwM2U3YTQ5M2I1IiwidXNlcl9pZCI6MX0.LCcX-PIB0nV1ekYziWfiZCze7FC3pr3H5C8pSQUcq7A"
 
     const setName = useBearStore((state) => state.setName);
     const name = useBearStore((state) => state.name);
@@ -63,41 +62,72 @@ export default function SelectAccount({ navigation }) {
     );
 
     return (
-        <View style={[MyStyle.center, { flex: 1 }]}
-        >
+        <View style={[MyStyle.center, { flex: 1 }]}>
             {/* <MyHomeButton /> */}
 
             <View>
-                <MyTitle text={`Hello, ${name}`} />
-                <MyTitle text={`Select an account`} />
+                
+                <MyTitle
+                    text={`Hello, ${name}`}
+                    style={{
+                        textAlign: 'center',
+                        color: "#00F",
+                        fontSize: 30,
+                        fontWeight: "500"
+                    }} />
+                
+                <MyTitle
+                    text={`Select an account`}
+                    style={{
+                        textAlign: 'center',
+                        color: "#00F",
+                        fontSize: 25,
+                        fontWeight: "500"
+                    }} />
 
                 <View style={{ width: 300, height: 600 }}>
+                    
                     <FlatList
+                        style={{
+                            height: "100%",
+                            width: "100%",
+                            marginTop: 25,
+                            borderWidth: 2,
+                            borderRadius: 10,
+                            borderColor: "#00F",
+                            padding: 5
+                        }}
+
                         data={data}
                         renderItem={({ item }) => (
+
                             <TouchableOpacity
                                 onPress={() => {
                                     setAccount_id(item.id);
                                     navigation.navigate("Menu");
                                 }}
-                                style={{ borderWidth: 1, borderRadius: 5, marginBottom: 10 }}
+                                style={{
+                                    borderWidth: 1,
+                                    borderRadius: 10,
+                                    borderColor: "#0000ff",
+                                    backgroundColor: "#0000ff",
+                                    marginBottom: 10,
+                                    padding: 5,
+                                }}
                             >
-                                <Text style={{ paddingLeft: 5 }}>{item.nickname}</Text>
-                                <Text style={{ paddingLeft: 5 }}>{item.agency} {item.number}</Text>
+                                <Text style={{ paddingLeft: 15, color: "#FFF", fontSize: 16, letterSpacing: 1.5, height: 25 }}>{item.nickname}</Text>
+                                <Text style={{ paddingLeft: 5, color: "#FFF", fontSize: 16, letterSpacing: 1.5 }}>{item.agency} {item.number}</Text>
                             </TouchableOpacity>
                         )}
-                        style={{
-                            height: "100%",
-                            width: "100%",
-                            marginTop: 25,
-                            borderWidth: 1
-                        }}
+
                     />
 
                     <MyButtonEmpty
                         text={"Create Account"}
                         onPress={() => navigation.navigate("RegisterAccount")}
+                        styleText={{ fontWeight: "500", paddingTop: 25, fontSize: 22 }}
                     />
+
                 </View>
             </View>
         </View>
