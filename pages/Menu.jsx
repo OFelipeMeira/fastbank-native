@@ -42,9 +42,9 @@ export default function Menu({ navigation }) {
          headers: { Authorization: "Bearer " + token },
       })
          .then((response) => {
-            // console.log(response.data);
+            console.log("Transactions =============================");
+            console.log(response.data);
             setTransactions(response.data);
-            console.log(transactions.slice(-1))
          })
          .catch((err) => {
             alert(err);
@@ -52,13 +52,13 @@ export default function Menu({ navigation }) {
          });
 
       // User pic
-      api.get(`api/v1/user/me`, {
+      api.get(`api/v1/user/me/`, {
          headers: { Authorization: "Bearer " + token },
       })
          .then((response) => {
-            console.log("USER =============================");
-            console.log(response.data);
-            setUserImg(response.data.url_image)
+            // console.log("USER =============================");
+            // console.log(response);
+            setUserImg(response.data.url_image);
          })
          .catch((err) => {
             console.log("=========== ERRROOOOO");
@@ -78,41 +78,36 @@ export default function Menu({ navigation }) {
    );
 
    return (
-      <View style={[MyStyle.center, {
-         flex: 1,
-         borderWidth: 1,
-      }]}>
-
+      <View
+         style={[
+            MyStyle.center,
+            {
+               flex: 1,
+               // borderWidth: 5,
+            },
+         ]}
+      >
          {/* show User Pic */}
-         {userImg ?
+         {userImg !== null ? (
             <MyProfileButton
                image={{ uri: userImg }}
                navigation={navigation}
             />
-            :
+         ) : (
             <MyProfileButton
                image={BlankProfile}
                navigation={navigation}
             />
-         }
+         )}
 
          {/* show Name and Balance */}
-         < MyMenuHeader
-            name={name}
-            balance={balance}
-         />
+         <MyMenuHeader name={name} balance={balance} />
 
          {/* show nav buttons */}
-         <MyMenuButtons
-            navigation={navigation}
-         />
+         <MyMenuButtons navigation={navigation} />
 
          {/* show transactions list */}
-         <MyMenuTransactions
-            label={"Transactions"}
-            data={transactions}
-         />
-
+         <MyMenuTransactions label={"Transactions"} data={transactions} />
       </View>
    );
 }

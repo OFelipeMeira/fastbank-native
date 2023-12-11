@@ -46,7 +46,7 @@ export default function RegisterAccount({ navigation }) {
                 <MyButtonFilled
                     text={"Create Account"}
                     onPress={() => registerAccount()}
-                    styleBtn={{ width: 150, height: 50 }}
+                    styleBtn={{ width: 170, height: 50 }}
                     styleText={{}}
                 />
             </View>

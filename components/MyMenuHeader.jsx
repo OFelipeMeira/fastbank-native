@@ -6,9 +6,6 @@ export function MyMenuHeader(props) {
         <View
             style={{
                 width: "100%",
-                position: 'absolute',
-                top: 90,
-                left: 0
             }}>
             <MyTitle
                 text={`Hello, ${props.name}`}
@@ -17,6 +14,7 @@ export function MyMenuHeader(props) {
                     fontWeight: '500',
                     color: "#00F",
                     textAlign: 'center',
+                    marginTop:70
                 }}
             />
             <MyTitle

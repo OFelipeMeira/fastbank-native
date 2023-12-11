@@ -25,7 +25,7 @@ export default function Login({ navigation }) {
          {
             "email": email,
             "password": password,
-            // "email": "admin@admin.com",
+            // "email": "a@b.com",
             // "password": "123456"
          }
       )
@@ -39,11 +39,12 @@ export default function Login({ navigation }) {
          .catch((err) => {
             console.log("========= Error")
             console.log("========= Data")
-            console.log(email)
-            console.log(password)
-            console.log("========= Error")
-            console.log(err)
-            console.log("========= Error")
+            // console.log(email)
+            // console.log(password)
+            // console.log("========= Error")
+            console.log(err.toJSON())
+            console.log("L==== Error")
+            console.log(err.response.data)
             if (err.response.data.detail) {
                alert(err.response.data.detail)
             }else{

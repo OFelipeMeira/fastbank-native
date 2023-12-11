@@ -30,7 +30,8 @@ export function MyButtonIcon(props) {
             style={{
                 justifyContent: "center",
                 alignItems: "center",
-                marginHorizontal: 8
+                marginHorizontal: 5,
+                width:90,
             }}
             onPress={() => props.navigation()}
         >

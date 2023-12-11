@@ -6,6 +6,7 @@ export const useBearStore = create(
         setToken: (value) => {
             set((state) => ({ ...state, token: value }));
         },
+        
         unSetToken: (value) => {
             set((state) => ({ token: undefined }));
         },

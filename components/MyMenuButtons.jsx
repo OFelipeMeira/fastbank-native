@@ -1,39 +1,39 @@
 import { View } from "react-native";
 import { MyButtonIcon } from "./MyButton";
 
-
 export function MyMenuButtons(props) {
-    return (
-        <View
-            style={{
-                flexDirection: "row",
-                width: 300,
-                justifyContent: "space-evenly",
-                // borderWidth:1,
-                paddingTop: 50,
-                paddingBottom: 30
-            }}
-        >
+   return (
+      <View
+         style={{
+            width: 300,
+            paddingTop: 50,
+            paddingBottom: 30,
+         }}
+      >
+         <View style={{ flexDirection: "row", justifyContent: "center" }}>
             <MyButtonIcon
-                label={"Transfer"}
-                navigation={() => props.navigation.navigate("Transfer")}
+               label={"Transfer"}
+               navigation={() => props.navigation.navigate("Transfer")}
             />
             <MyButtonIcon
-                label={"Loan"}
-                navigation={() => props.navigation.navigate("Loan")}
+               label={"Loan"}
+               navigation={() => props.navigation.navigate("Loan")}
             />
             <MyButtonIcon
-                label={"Credit"}
-                navigation={() => props.navigation.navigate("Credit")}
+               label={"Credit"}
+               navigation={() => props.navigation.navigate("Credit")}
+            />
+         </View>
+         <View style={{ flexDirection: "row", justifyContent: "center", marginTop:10 }}>
+            <MyButtonIcon
+               label={"Deposit"}
+               navigation={() => props.navigation.navigate("Deposit")}
             />
             <MyButtonIcon
-                label={"Deposit"}
-                navigation={() => props.navigation.navigate("Deposit")}
+               label={"Withdraw"}
+               navigation={() => props.navigation.navigate("Withdraw")}
             />
-            <MyButtonIcon
-                label={"Withdraw"}
-                navigation={() => props.navigation.navigate("Withdraw")}
-            />
-        </View>
-    )
+         </View>
+      </View>
+   );
 }
