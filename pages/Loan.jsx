@@ -27,12 +27,12 @@ export default function Loan({ navigation }) {
       )
          .then((response) => {
             // console.log(response)
-            navigation.navigate("Menu");
+            // navigation.navigate("Menu");
             alert(response.data.message);
          })
          .catch((err) => {
             console.log("========= ERRO on Loan");
-            console.log(err);
+            console.log(err.response);
          });
    };
 

@@ -107,7 +107,7 @@ export default function Menu({ navigation }) {
          <MyMenuButtons navigation={navigation} />
 
          {/* show transactions list */}
-         <MyMenuTransactions label={"Transactions"} data={transactions} />
+         <MyMenuTransactions label={"Transactions"} data={transactions} accountId={account_id} />
       </View>
    );
 }

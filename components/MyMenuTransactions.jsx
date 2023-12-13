@@ -38,6 +38,24 @@ export function MyMenuTransactions(props) {
                         padding: 5,
                      }}
                   >
+
+                     <Text style={{
+                        marginLeft: 5,
+                        padding: 2,
+                        color: "#FFF",
+                        fontSize: 16,
+                        fontWeight: "400",
+                     }}>
+                        {item.receiver && item.sender ?
+                           item.receiver == props.accountID ?
+                              "Transfer Received" : "Transfer Done"
+                           : ""}
+
+                        {item.receiver == props.accountID ? "Withdraw" : ""}
+
+                        {item.sender == props.accountID ? "Deposit" : ""}
+                     </Text>
+
                      <Text
                         style={{
                            marginLeft: 5,
@@ -49,34 +67,6 @@ export function MyMenuTransactions(props) {
                      >
                         ${item.value}
                      </Text>
-
-                     {item.receiver ? (
-                        // IF the account is losing money
-                        <Text
-                           style={{
-                              marginLeft: 5,
-                              padding: 2,
-                              color: "#FFF",
-                              fontSize: 16,
-                              fontWeight: "400",
-                           }}
-                        >
-                           {/* {item.receiver.agency} {item.receiver.number} */}
-                           {item.receiver}
-                        </Text>
-                     ) : (
-                        // IF the account is losing money
-                        <Text
-                           style={{
-                              marginLeft: 5,
-                              padding: 2,
-                              color: "#FFF",
-                              fontSize: 16,
-                              fontWeight: "400",
-                           }}
-                        >
-                        </Text>
-                     )}
 
 
                      <Text

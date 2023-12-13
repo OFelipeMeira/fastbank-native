@@ -27,7 +27,7 @@ export default function Credit({ navigation }) {
       )
          .then((response) => {
             // console.log(response)
-            navigation.navigate("Menu");
+            // navigation.navigate("Menu");
             alert(response.data.message);
          })
          .catch((err) => {

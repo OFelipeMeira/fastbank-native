@@ -29,6 +29,7 @@ export default function Register({ navigation }) {
         )
             .then((response) => {
                 console.log("REGISTRADO")
+                alert("Registered")
                 // console.log(response)
                 navigation.navigate("Login");
             })
@@ -42,6 +43,7 @@ export default function Register({ navigation }) {
                 console.log("========= Error")
                 console.log(err)
                 console.log("========= Error")
+                alert("Error in register. Verify all the information and try again")
             });
     }
 
